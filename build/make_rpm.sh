@@ -1,10 +1,10 @@
 #!/bin/bash
 
 [ `whoami` = "root" ] && exit 1
-rpmspec=~/rundeck-connie/rundeck-connie.spec
+rpmspec=~/mongolab-dex/mongolab-dex.spec
 version=`egrep -i 'version:' $rpmspec | cut -d: -f2 | sed -e "s/ //g"`
-progname=rundeck-connie
-branch=infra111
+progname=mongolab-dex
+branch=infra1034
 gituser=dentso
 gitrepo="git@github.com:dentso/${progname}.git"
 
