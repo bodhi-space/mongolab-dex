@@ -1,26 +1,19 @@
 #!/bin/bash
 
-stop_service() {
-  /sbin/service rundeck-connie stop
-  /sbin/chkconfig --del rundeck-connie
+archive_dir=/opt/mongolab-dex
+[ ! -d ${archive_dir} ] && exit 1
+pip=/usr/bin/pip
+yes=/usr/bin/yes
+
+remove_dex() {
+  $pip show dex
+  [ $? != 0 ] && exit 1
+  $yes | $pip uninstall dex
+  [ $? != 0 ] && exit 1
   return 0
 }
 
-remove_user() {
-  /usr/bin/getent passwd connie && /usr/sbin/userdel -r connie
-  /usr/bin/getent group connie && /usr/sbin/groupdel connie
-  return 0
-}
+echo "Running pre-install script"
+remove_dex
 
-cleanup() {
-  rm -rf /opt/rundeck-connie
-  rm -rf /home/connie
-  return 0
-}
-
-echo "Running post-uninstall script"
-stop_service
-remove_user
-#cleanup
- 
 exit 0

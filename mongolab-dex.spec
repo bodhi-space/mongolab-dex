@@ -5,10 +5,10 @@ Version:        1.0.0
 Release:        1%{?dist}
 Group:          System
 License:        GPLv2
-URL:            ihttps://github.com/mongolab/dex
+URL:            https://github.com/mongolab/dex
 Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
-Requires:       /usr/bin/easy_install
+Requires:       /usr/bin/pip, /usr/bin/yes
 Summary:        Installs dex utility for MongoDB
 
 
