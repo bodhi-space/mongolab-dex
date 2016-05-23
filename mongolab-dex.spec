@@ -37,6 +37,7 @@ popd
 /opt/mongolab-dex/*.tgz
 %attr(755, root, root) 
 /opt/mongolab-dex/bin/*.sh
+/opt/mongolab-dex/bin/dex
 
 %dir
 %attr(755, root, root) 
