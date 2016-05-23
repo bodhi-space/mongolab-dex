@@ -29,11 +29,8 @@ popd
 %post
 /opt/mongolab-dex/bin/post_install.sh
 
-exit 0
-
 %preun
 /opt/mongolab-dex/bin/post_uninstall.sh
-exit 0
 
 %files
 %attr(644, root, root) 
