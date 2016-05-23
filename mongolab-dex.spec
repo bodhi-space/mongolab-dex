@@ -36,13 +36,11 @@ popd
 %attr(644, root, root) 
 /opt/mongolab-dex/*.tgz
 %attr(755, root, root) 
-/opt/mongolab-dex/bin/*.sh
-/opt/mongolab-dex/bin/dex
+/opt/mongolab-dex/bin/*
 
 %dir
 %attr(755, root, root) 
 /opt/mongolab-dex/bin
-/opt/mongolab-dex
 
 %changelog
 * Thu May 19 2016 - Esaie Vermilus <esaie.vermilus@hotschedules.com> - 1.0.0-1
