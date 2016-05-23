@@ -8,7 +8,7 @@ yes=/usr/bin/yes
 remove_dex() {
   $pip show dex
   [ $? != 0 ] && exit 1
-  $yes | $pip uninstall dex --disable-pip-version-check
+  $yes | $pip uninstall dex --disable-pip-version-check --target={archive_dir}/bin
   [ $? != 0 ] && exit 1
   return 0
 }
