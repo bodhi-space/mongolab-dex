@@ -18,9 +18,10 @@ setup_archive() {
 install_dex() {
   [ ! -d /var/tmp/${package} ] && exit 1
   cd /var/tmp/${package}
-  $pip install dex --disable-pip-version-check --target=${archive_dir}/bin
+  $pip install dex --disable-pip-version-check
   [ $? != 0 ] && exit 1
   rm -rf /var/tmp/${package}
+  ln -s /usr/local/bin/dex /opt/mongolab-dex/bin/dex
   return 0
 }
 
